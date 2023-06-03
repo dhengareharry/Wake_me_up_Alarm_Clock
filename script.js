@@ -53,7 +53,30 @@ function setAlarm() {
   const alarmSecond = parseInt(alarmSecondInput.value);
   const alarmAmPm = alarmAmPmInput.value;
 
-  const alarmTime = formatTime(alarmHour) + ":" + formatTime(alarmMinute) + ":" + formatTime(alarmSecond) + " " + alarmAmPm;
+  if (
+    isNaN(alarmHour) ||
+    isNaN(alarmMinute) ||
+    isNaN(alarmSecond) ||
+    alarmHour < 1 ||
+    alarmHour > 12 ||
+    alarmMinute < 0 ||
+    alarmMinute > 59 ||
+    alarmSecond < 0 ||
+    alarmSecond > 59
+  ) {
+    // Display an alert if the input values are invalid
+    alert("Please enter valid alarm time!");
+    return;
+  }
+
+  const alarmTime =
+    formatTime(alarmHour) +
+    ":" +
+    formatTime(alarmMinute) +
+    ":" +
+    formatTime(alarmSecond) +
+    " " +
+    alarmAmPm;
 
   const newAlarm = {
     time: alarmTime,
@@ -67,6 +90,7 @@ function setAlarm() {
   alarmMinuteInput.value = "";
   alarmSecondInput.value = "";
 }
+
 
 // Function to delete an alarm
 function deleteAlarm(index) {
