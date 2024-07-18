@@ -20,3 +20,5 @@ This web application provides a user-friendly interface to set and manage multip
 3. Click the "Set Alarm" button to add the alarm to the alarm list.
 4. The current time will be displayed, and any triggered alarms will trigger an alert and play an alarm sound.
 5. To stop the alarm sound, click the "Stop Alarm" button.
+
+Link : https://dhengareharry.github.io/Wake_me_up_Alarm_Clock/
